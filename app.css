@@ -1,0 +1,25 @@
+html,
+body,
+.page,
+.container,
+.columns,
+.column {
+  height: 100%;
+}
+
+.hero.is-primary {
+  background-color: #34495e;
+}
+
+.columns {
+  margin-top: 0;
+}
+
+.column:first-child {
+  border-right: 2px solid #e1e1e1;
+}
+
+.editor {
+  height: 100%;
+  padding-left: 15px
+}
