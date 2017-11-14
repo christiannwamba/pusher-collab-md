@@ -2,7 +2,6 @@ class App {
   constructor() {
     // Initialize properties
     this.textSyncInstance = null;
-    this.$ = $;
     this.md = markdownit();
     // Prepare TextSync
     this.setupTextSync();
@@ -30,6 +29,7 @@ class App {
   }
   
   handleTextSyncReady(editor) {
+    console.log(editor.quill)
     // Update editor header with
     // different visuals
     this.updateEditorHeader()
@@ -40,9 +40,11 @@ class App {
 
   updateEditorHeader() {
     // Hide the text formatting controls
-    this.$('.ql-formats').css({'display': 'none'});
-    // Add a random title to replace the controls
-    this.$('<span class="has-text-weight-semibold">Go markdown</span>').prependTo('.ql-toolbar');
+    // and add a simpler header
+    const qlFormats = document.querySelectorAll('.ql-formats');
+    const qlToolbar = document.querySelector('.ql-toolbar');
+    qlFormats.forEach(qlFormat => qlFormat.style.display = 'none');
+    qlToolbar.innerHTML = '<span class="has-text-weight-semibold">Go markdown</span>'
   }
 
   startParsingInterval(editor) {
@@ -61,7 +63,8 @@ class App {
     // `md.render` parses the MD
     const parsedMdContent = this.md.render(rawMdText);
     // Replace the preview div with the parsed HTML
-    this.$('.preview__content').html(parsedMdContent);
+    const preview = document.querySelector('.preview__content');
+    preview.innerHTML = parsedMdContent;
   }
 }
 

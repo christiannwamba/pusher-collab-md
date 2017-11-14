@@ -1,3 +1,36 @@
+html {
+  background-color: #fff;
+  font-size: 16px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  min-width: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  color: #4a4a4a;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica,
+    Arial, sans-serif;
+}
+
 html,
 body,
 .page,
@@ -7,28 +40,99 @@ body,
   height: 100%;
 }
 
+.container {
+  max-width: 1344px;
+  width: 1344px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero {
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 .hero.is-primary {
   background-color: #34495e;
+  color: #fff;
+}
+
+.hero-body {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  padding: 3rem 1.5rem;
 }
 
 .columns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin-top: 0;
 }
 
+.column {
+  display: block;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  padding: 0.75rem;
+}
 .column:first-child {
   border-right: 2px solid #e1e1e1;
 }
 
 .editor {
   height: 100%;
-  padding-left: 15px
+  padding-left: 15px;
 }
 
-.preview
-.preview__title {
+.preview .preview__title {
   /* border-top: 2px solid #e1e1e1; */
   border-bottom: 2px solid #e1e1e1;
   margin-left: -0.75rem;
   margin-bottom: 1rem;
   padding-left: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.125;
+}
+
+.subtitle:not(:last-child),
+.title:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.title:not(.is-spaced) + .subtitle {
+  margin-top: -1.5rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.has-text-weight-semibold {
+  font-weight: bold;
 }
